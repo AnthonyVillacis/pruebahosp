@@ -1,4 +1,5 @@
 <?php
+require_once('../api/conexion.php');
 $json_data = file_get_contents("php://input");
 
 // Decodificar los datos JSON en un array asociativo
@@ -8,13 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($data) ) {
     $password = $data['password'];
     $tipoentrada = $data['entrada'];
 
-    // Conectar a la base de datos
-    $conn = new mysqli('192.168.1.101', 'apiroot3', 'root123', 'pruebahosp', 3306);
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die('Connection failed: ' . $conn->connect_error);
-    }
-
+    $conn = conectarBaseDatos();
     // Buscar al usuario en la tabla de usuarios
     $sql = "SELECT id, password_md5 FROM usuarios WHERE username = '$username'";
     $result = $conn->query($sql);

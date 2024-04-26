@@ -1,5 +1,7 @@
 <?php
+require_once('../api/conexion.php');
 require_once('../modulos/fpdf/fpdf.php');
+
 // Establecer la cabecera de respuesta como JSON
 header('Content-Type: application/json');
 
@@ -8,14 +10,7 @@ if (isset($_GET['fechaInicio']) && isset($_GET['fechaFin'])) {
     $fechainicio = $_GET['fechaInicio'];
     $fechafin = $_GET['fechaFin'];
 
-    // Conectar a la base de datos
-    $conn = new mysqli('192.168.1.101', 'apiroot3', 'root123', 'pruebahosp', 3306);
-
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die('Connection failed: ' . $conn->connect_error);
-    }
-
+    $conn = conectarBaseDatos();
     // Consultar los registros de asistencia para la fecha proporcionada
     $sql = "SELECT * FROM listado_horarios WHERE DATE(timestamp) BETWEEN '$fechainicio' AND '$fechafin'";
     $result = $conn->query($sql);

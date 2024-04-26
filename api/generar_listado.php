@@ -1,24 +1,18 @@
 <?php
+require_once('../api/conexion.php');
 // Establecer la cabecera de respuesta como JSON
 header('Content-Type: application/json');
 
 // Verificar si se proporcionó la fecha en la solicitud GET
 if (isset($_GET['fecha'])) {
+
     $fecha = $_GET['fecha'];
 
-    // Conectar a la base de datos
-    $conn = new mysqli('192.168.1.101', 'apiroot3', 'root123', 'pruebahosp', 3306);
-
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die('Connection failed: ' . $conn->connect_error);
-    }
-
+    $conn = conectarBaseDatos();
     // Consultar los registros de asistencia para la fecha proporcionada
     $sql = "SELECT * FROM listado_horarios WHERE DATE(timestamp) = '$fecha'";
     $result = $conn->query($sql);
 
-    
     // Verificar si se encontraron registros
     if ($result->num_rows > 0) {
         // Array para almacenar los resultados

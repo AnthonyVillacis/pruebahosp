@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Error al obtener los datos:', error);
+            alert('Error no se tienen datos para mostrar seleccione otro dia.');
         });
     });
 });
