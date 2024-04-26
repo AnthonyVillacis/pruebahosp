@@ -1,0 +1,63 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+}
+
+
+html {
+  background-color: var(--light-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-container {
+  background-color: var(--primary-color);
+  display: flex;
+  width: 15rem;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.nav-container ul {
+  list-style-type: none;
+  padding: 0rem;
+  gap: 1rem;
+}
+
+.nav-container ul li {
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.nav-container ul li a {
+  color: var(--light-color);
+  text-decoration: none;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.nav-container ul li a:hover {
+  color: var(--light-color);
+  background-color: var(--secondary-color);
+}
+
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+}
