@@ -32,14 +32,5 @@ de la base de datos, luego cargas las tablas con los registros de la carpeta sql
 
 ## Estructura
 
---src
- |
- |_api (carpeta que contiene los controladores que se conectan con la base para leer o escribir)
- |
- |_css (carpeta que contiene los estilos)
- |
- |_js (carpeta que contiene los scripts)
- |
- |_modulos(carpeta que contiene modulos necesarios para generar reportes)
- |
- |_sql (carpeta que contiene los registros iniciales para la base de datos)
+![alt text](image.png)
+
