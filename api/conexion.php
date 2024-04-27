@@ -1,10 +1,10 @@
 <?php
 function conectarBaseDatos() {
     // Datos de conexión a la base de datos
-    $servername = '192.168.1.101';
-    $username = 'apiroot3';
-    $password = 'root123';
-    $database = 'pruebahosp';
+    $servername = 'localhost';
+    $username = 'usuario';
+    $password = 'contraseña';
+    $database = 'basededatos';
     $port = 3306;
 
     // Crear la conexión
